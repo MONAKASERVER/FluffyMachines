@@ -14,6 +14,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
+import org.bukkit.ExplosionResult;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
@@ -80,7 +81,8 @@ class UpgradedExplosiveTool extends ExplosiveTool {
         List<Block> blocksToDestroy = new ArrayList<>();
 
         if (callExplosionEvent.getValue()) {
-            BlockExplodeEvent blockExplodeEvent = new BlockExplodeEvent(b, blocks, 0);
+            BlockExplodeEvent blockExplodeEvent = new BlockExplodeEvent(
+                    b, b.getState(), blocks, 0, ExplosionResult.KEEP);
             Bukkit.getServer().getPluginManager().callEvent(blockExplodeEvent);
 
             if (!blockExplodeEvent.isCancelled()) {

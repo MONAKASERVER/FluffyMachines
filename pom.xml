@@ -8,15 +8,14 @@
     <version>1.0.0</version>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <repositories>
         <repository>
             <id>paper-repo</id>
-            <url>https://repo.destroystokyo.com/repository/maven-public/</url>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
 
         <repository>
@@ -54,7 +53,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.9.0</version>
+                <version>3.14.1</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.42</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
             </plugin>
 
             <plugin>
@@ -98,17 +106,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.16.3-R0.1-SNAPSHOT</version>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>26.1.2.build.74-stable</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>io.github.TheBusyBiscuit</groupId>
+            <groupId>io.github.slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-37</version>
-            <scope>provided</scope>
+            <version>MONA-2834</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/SlimefunCore4-2834.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -141,7 +150,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <version>1.18.42</version>
             <scope>provided</scope>
         </dependency>
 

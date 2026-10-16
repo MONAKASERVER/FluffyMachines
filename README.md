@@ -1,5 +1,7 @@
 # FluffyMachines
 
+> MONAKA SERVER fork: Paper 26.1.2 and the server's current Slimefun API are supported on the `mona-paper-26` branch. For local builds, place the matching server Slimefun jar at `lib/SlimefunCore4-2834.jar`.
+
 These are some thrown together machines made by me for fun :)
 I pretty much add whatever comes to mind, is suggested by me, or other addons don't want to add.
 
